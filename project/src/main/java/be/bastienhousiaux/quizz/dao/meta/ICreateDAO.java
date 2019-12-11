@@ -1,0 +1,4 @@
+package be.bastienhousiaux.quizz.dao.meta;
+
+public interface ICreateDAO {
+}
