@@ -1,4 +1,5 @@
 package be.bastienhousiaux.quizz.dao.meta;
 
-public interface ICreateDAO {
+public interface ICreateDAO<T> {
+    T create(T obj);
 }
