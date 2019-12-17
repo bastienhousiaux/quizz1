@@ -1,36 +1,21 @@
 package be.bastienhousiaux.quizz.dao.entities;
 
-import be.bastienhousiaux.quizz.datatypes.ChunkType;
-
-public class InformationChunkEntity {
-    private int id;
-    private ChunkType type;
+public class InformationChunkEntity extends AbstractEntity {
     private String data;
+    private int type_id;
+    private int block_id;
 
-    public InformationChunkEntity() {
-    }
-
-    public InformationChunkEntity(ChunkType type, String data) {
-        this.type = type;
+    public InformationChunkEntity(String data, int type_id, int block_id) {
         this.data = data;
+        this.type_id = type_id;
+        this.block_id = block_id;
     }
 
-    public InformationChunkEntity(int id, ChunkType type, String data) {
-        this.id = id;
-        this.type = type;
+    public InformationChunkEntity(int id, String data, int type_id, int block_id) {
+        super(id);
         this.data = data;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public ChunkType getType() {
-        return type;
-    }
-
-    public void setType(ChunkType type) {
-        this.type = type;
+        this.type_id = type_id;
+        this.block_id = block_id;
     }
 
     public String getData() {
@@ -39,5 +24,21 @@ public class InformationChunkEntity {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public int getType_id() {
+        return type_id;
+    }
+
+    public void setType_id(int type_id) {
+        this.type_id = type_id;
+    }
+
+    public int getBlock_id() {
+        return block_id;
+    }
+
+    public void setBlock_id(int block_id) {
+        this.block_id = block_id;
     }
 }

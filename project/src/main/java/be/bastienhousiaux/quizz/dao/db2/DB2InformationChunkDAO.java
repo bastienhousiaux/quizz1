@@ -2,15 +2,11 @@ package be.bastienhousiaux.quizz.dao.db2;
 
 import be.bastienhousiaux.quizz.dao.AbstractInformationChunkDAO;
 import be.bastienhousiaux.quizz.dao.entities.InformationChunkEntity;
-import be.bastienhousiaux.quizz.dao.meta.AbstractDBConnector;
 
 import java.util.List;
 
 public class DB2InformationChunkDAO extends AbstractInformationChunkDAO {
 
-    public DB2InformationChunkDAO(AbstractDBConnector driverManager) {
-        super(driverManager);
-    }
 
     public InformationChunkEntity create(InformationChunkEntity obj) {
         return null;
