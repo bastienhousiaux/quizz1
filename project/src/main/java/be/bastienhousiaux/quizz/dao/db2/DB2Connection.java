@@ -48,16 +48,4 @@ public class DB2Connection {
         return null;
     }
 
-    @Deprecated
-    public ResultSet getEverythingFromTable(String tableName){
-        PreparedStatement ps=this.createPreparedStatement("SELECT * from ?");
-        try {
-            ps.setString(1,tableName);
-            return ps.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }

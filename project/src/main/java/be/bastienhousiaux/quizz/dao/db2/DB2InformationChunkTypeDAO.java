@@ -20,6 +20,9 @@ public class DB2InformationChunkTypeDAO extends AbstractInformationChunkTypeDAO 
         try {
             pr.setString(1,obj.getTypeName());
             pr.execute();
+            ResultSet rs=pr.executeQuery("SELECT IDENTITY_VAL_LOCAL() AS insertedId FROM SYSIBM.SYSDUMMY1");
+            rs.next();
+            obj.setId(rs.getInt("insertedId"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -63,12 +66,12 @@ public class DB2InformationChunkTypeDAO extends AbstractInformationChunkTypeDAO 
             ResultSet rs=pr.executeQuery();
             rs.next();
             informationChunkTypeEntity=new InformationChunkTypeEntity(id,rs.getString("type_name"));
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-
+        connection.close();
         return informationChunkTypeEntity;
     }
 
@@ -82,11 +85,11 @@ public class DB2InformationChunkTypeDAO extends AbstractInformationChunkTypeDAO 
                 String name=resultSet.getString("type_name");
                 informationChunkTypeEntities.add(new InformationChunkTypeEntity(id,name));
             }
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        connection.close();
         return informationChunkTypeEntities;
     }
 
@@ -97,10 +100,11 @@ public class DB2InformationChunkTypeDAO extends AbstractInformationChunkTypeDAO 
             pr.setString(1,obj.getTypeName());
             pr.setInt(2,obj.getId());
             pr.execute();
-            connection.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        connection.close();
         return obj;
     }
 }

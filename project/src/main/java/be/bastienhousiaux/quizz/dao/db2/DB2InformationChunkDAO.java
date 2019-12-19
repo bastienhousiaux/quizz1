@@ -8,6 +8,12 @@ import java.util.List;
 public class DB2InformationChunkDAO extends AbstractInformationChunkDAO {
 
 
+    private DB2Connection connection;
+
+    public DB2InformationChunkDAO(DB2Connection connection) {
+        this.connection = connection;
+    }
+
     public InformationChunkEntity create(InformationChunkEntity obj) {
         return null;
     }
