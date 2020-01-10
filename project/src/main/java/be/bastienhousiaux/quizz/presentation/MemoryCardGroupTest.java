@@ -19,9 +19,9 @@ public class MemoryCardGroupTest {
         while(group.hasCardLeft()){
             try{
                 MemoryCard card=group.getNextCard();
-                System.out.println("recto:\n"+card.getRecto().getData()+"\n appuyez sur enter pour continuer");
+//                System.out.println("recto:\n"+card.getRecto().getData()+"\n appuyez sur enter pour continuer");
                 System.in.read();
-                System.out.println("verso:\n"+card.getVerso().getData()+"\n appuez sur enter pour continuer");
+//                System.out.println("verso:\n"+card.getVerso().getData()+"\n appuez sur enter pour continuer");
                 System.in.read();
             }catch(Exception e){
                 e.printStackTrace();

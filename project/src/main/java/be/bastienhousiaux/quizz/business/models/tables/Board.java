@@ -17,6 +17,14 @@ public class Board<T> {
         this.height = height;
     }
 
+    public void addColumnAt(int index){
+
+    }
+
+    public void addLineAt(int index){
+
+    }
+
     public int xyTox(int x,int y){
         return y*width+x;
     }
